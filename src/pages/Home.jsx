@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import {
   fetchAllCountries,
   fetchCountryByName,
-  fetchCountriesByRegion,
+  
 } from "../services/api";
 import { getCurrentUser, logout } from "../services/auth";
 import SearchBar from "../components/SearchBar";
