@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+# 🌍 GlobeScope - Country Explorer Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React-based web application that allows users to explore country data from the REST Countries API. Users can search for countries, filter by region or language, and view detailed information. The application also includes a simple login feature and lets users mark countries as favorites (stored locally).
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🔧 Application Setup
 
-### `npm start`
+### 1. Clone the Repository
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+git clone https://github.com/isiniperera/my-country-explorer-deploy.git
+cd my-country-explorer-deploy
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 2. Install the dependencies
 
-### `npm test`
+npm install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 3. Start the Development Server
 
-### `npm run build`
+npm start
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 4. Build for Production
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+npm run build
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 5. Hosted URL
 
-### `npm run eject`
+🔗 https://jovial-conkies-7ff337.netlify.app
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 6. API Used
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+REST Countries API v3.1
+URL: https://restcountries.com/v3.1
+    Fetches real-time data of all countries
+    Provides data on population, region, capital, currencies, languages, and borders
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 7. Features
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    Light/Dark Mode Toggle
+    Country Search by Name
+    Filter by Region or Language
+    View Detailed Country Information
+    Mark Favorite Countries (saved per user)
+    Simple LocalStorage-based Login System
 
-## Learn More
+### 8. Challenges Faced & Solutions
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+-> Language Filtering:
+The API structure required nested traversal to extract unique languages. Solved using a dynamic language extraction function and map logic.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+-> User-Based Favorites:
+Needed to store favorites based on the logged-in user. Solved by using a favorites-<username> key pattern in localStorage.
 
-### Code Splitting
+-> Long Netlify Build:
+The build took time due to Netlify post-processing. Allowed it to complete, as it did eventually finish successfully.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 9. Technologies Used
 
-### Analyzing the Bundle Size
+    React (with Hooks and Functional Components)
+    React Router DOM
+    JavaScript ES6+
+    CSS Modules
+    REST API (REST Countries)
+    Netlify for Deployment
+    LocalStorage for simple state persistence
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 10. Authentication
 
-### Making a Progressive Web App
+    Simple local login with username
+    Session is stored in localStorage
+    No backend or password system
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 11. Submission Info
 
-### Advanced Configuration
+    GitHub Repository:
+    🔗 https://github.com/isiniperera/my-country-explorer-deploy
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    GitHub Classroom Link:
+    🔗 https://github.com/SE1020-IT2070-OOP-DSA-25/af-2-isiniperera
 
-### Deployment
+    Hosted Site (Netlify):
+    🔗 https://jovial-conkies-7ff337.netlify.app
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### 12. Testing
 
-### `npm run build` fails to minify
+### Unit & Integration Tests
+- Used **Jest** and **React Testing Library** for component testing.
+- Tested components like `CountryCard`, `SearchBar`, and pages like `Home` .
+- Verified rendering, props handling, and integration with user events.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Responsiveness
+- Fully responsive across mobile,  desktop views.
+- Verified using Chrome DevTools with various screen breakpoints.
+
+### Cross-Browser Compatibility
+- Tested on Chrome, Firefox.
+- Ensured consistent behavior, rendering, and layout across all browsers.
