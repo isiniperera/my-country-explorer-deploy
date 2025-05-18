@@ -73,6 +73,12 @@ export default function Home() {
     applyFilters(selectedRegion, language);
   };
 
+  const handleClearFilters = () => {
+    setSelectedRegion("");
+    setSelectedLanguage("");
+    setCountries(allCountries);
+  };
+
   const handleFavorite = (country) => {
     if (!username) {
       toast.error("Please log in to favorite countries.");
@@ -112,17 +118,18 @@ export default function Home() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Only show search and filters when no country is selected */}
         {!selectedCountry && (
-          <div className="flex flex-col md:flex-row gap-6 mb-8">
-            {/* Search Bar - Takes up more space on larger screens */}
-            <div className="w-full md:w-2/3">
+          <div className="flex flex-col sm:flex-row gap-4 mb-8">
+            {/* Search Bar - Increased width further */}
+            <div className="w-full sm:w-1/2">
               <SearchBar onSearch={handleSearch} />
             </div>
             
-            {/* Filter Menu - Takes up less space on larger screens */}
-            <div className="w-full md:w-1/3">
+            {/* Filter Menu - Adjusted width */}
+            <div className="w-full sm:w-1/2">
               <FilterMenu
                 onSelectRegion={handleRegionSelect}
                 onSelectLanguage={handleLanguageSelect}
+                onClearFilters={handleClearFilters}
               />
             </div>
           </div>

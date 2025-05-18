@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { fetchAllCountries } from "../services/api";
+import { FiX } from "react-icons/fi";
 
-export default function FilterMenu({ onSelectRegion, onSelectLanguage }) {
+export default function FilterMenu({ onSelectRegion, onSelectLanguage, onClearFilters }) {
   const regions = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
   const [languages, setLanguages] = useState([]);
 
@@ -20,7 +21,7 @@ export default function FilterMenu({ onSelectRegion, onSelectLanguage }) {
   }, []);
 
   return (
-    <div className="flex flex-col sm:flex-row gap-3 w-full">
+    <div className="flex flex-row gap-3 w-full">
       {/* Region Filter */}
       <div className="relative flex-1">
         <div className="relative">
@@ -104,6 +105,22 @@ export default function FilterMenu({ onSelectRegion, onSelectLanguage }) {
           </div>
         </div>
       </div>
+
+      {/* Clear Filters Button - Icon Only */}
+      <button
+        onClick={onClearFilters}
+        className="flex items-center justify-center w-12 h-12 rounded-xl border-2
+          bg-white dark:bg-gray-800 
+          border-gray-200 dark:border-gray-700
+          text-gray-900 dark:text-white
+          hover:border-red-400 dark:hover:border-red-500
+          hover:text-red-500 dark:hover:text-red-400
+          transition-all duration-200
+          shadow-sm"
+        title="Clear all filters"
+      >
+        <FiX className="w-5 h-5" />
+      </button>
     </div>
   );
 }
